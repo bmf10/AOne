@@ -111,8 +111,8 @@ Route::get('/user', function (Request $request) use ($list) {
     $new_list_by_pagination = array_slice($list, $start, $per_page);
 
     $data = [
-        "page" => $page,
-        "per_page" => $per_page,
+        "page" => (int)$page,
+        "per_page" => (int)$per_page,
         "total" => count($list),
         "total_pages" => $total_page,
         "data" => $new_list_by_pagination, "support" => [
